@@ -1,0 +1,8 @@
+# Lokalni konverterski fajlovi — NE idu na GitHub
+convert.py
+convert.bat
+Komanda*.txt
+
+# OS
+.DS_Store
+Thumbs.db

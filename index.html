@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B5 WIP 5 — Helvetas</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="controls">
+    <button id="btn-prev" title="Prethodna">‹</button>
+    <button id="btn-next" title="Sledeća">›</button>
+    <span id="page-info">— / —</span>
+    <button id="btn-zoom-in" title="Uvećaj">+</button>
+    <button id="btn-zoom-out" title="Umanji">−</button>
+    <button id="btn-fullscreen" title="Ceo ekran">⛶</button>
+    <!-- Download dugme: mora biti <a> (download atribut radi samo na anchorima) -->
+    <a id="btn-download" title="Skini PDF" style="display:none;text-decoration:none;" download>⤓ PDF</a>
+  <button id="btn-mode" title="Režim prikaza">📖 Knjiga</button>
+  </div>
+
+  <div class="book-wrapper">
+    <div id="book"></div>
+  </div>
+
+  <script>
+// PAGES list — generiše convert.py, ne dirati ručno
+const PAGES = [
+  "pages/page_01.jpg",
+  "pages/page_02.jpg",
+  "pages/page_03.jpg",
+  "pages/page_04.jpg",
+  "pages/page_05.jpg",
+  "pages/page_06.jpg",
+  "pages/page_07.jpg",
+  "pages/page_08.jpg",
+  "pages/page_09.jpg",
+  "pages/page_10.jpg",
+  "pages/page_11.jpg",
+  "pages/page_12.jpg",
+  "pages/page_13.jpg",
+  "pages/page_14.jpg",
+  "pages/page_15.jpg",
+  "pages/page_16.jpg",
+  "pages/page_17.jpg",
+  "pages/page_18.jpg",
+  "pages/page_19.jpg",
+  "pages/page_20.jpg",
+  "pages/page_21.jpg",
+  "pages/page_22.jpg",
+  "pages/page_23.jpg",
+  "pages/page_24.jpg"
+];
+const PDF_FILE = "B5 BLUE 5.pdf";
+
+  </script>
+  <script src="assets/stpageflip.min.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>

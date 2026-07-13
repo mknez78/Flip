@@ -1,0 +1,145 @@
+/* StPageFlip flipbook — Helvetas B5 WIP 5
+   Format: B5 landscape (250x176mm), 24 strane = 12 listova
+*/
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  height: 100%;
+  background: #2a2a2a;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #ddd;
+  overflow: hidden;
+}
+
+/* Kontrolna traka */
+.controls {
+  position: fixed;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.75);
+  padding: 6px 12px;
+  border-radius: 24px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.controls button,
+.controls a {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #eee;
+  font-size: 16px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.controls button:hover,
+.controls a:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.controls button:active,
+.controls a:active {
+  transform: scale(0.92);
+}
+
+#btn-mode {
+  width: auto;
+  border-radius: 18px;
+  padding: 0 14px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+#page-info {
+  font-size: 13px;
+  min-width: 50px;
+  text-align: center;
+  color: #bbb;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Knjiga */
+.book-wrapper {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start; /* knjiga ide ispod toolbara, ne centrira se */
+  justify-content: center;
+  padding-top: 70px; /* mesto za toolbar */
+  padding-bottom: 16px;
+  box-sizing: border-box;
+}
+#book {
+  /* StPageFlip sam dimenzionira; mi samo centriramo */
+}
+
+/* StPageFlip default-ovi su OK; samo ograničimo */
+.stf__block {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive — tablet */
+@media (max-width: 1024px) {
+  .book-wrapper {
+    padding-top: 60px;
+  }
+}
+
+/* Responsive — mobilni (uspravno) */
+@media (max-width: 1023px) {
+  .controls {
+    padding: 4px 8px;
+    gap: 4px;
+  }
+  .controls button,
+  .controls a {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+  #btn-mode {
+    padding: 0 10px;
+    font-size: 12px;
+  }
+  #page-info {
+    font-size: 12px;
+  }
+  .book-wrapper {
+    padding-top: 56px; /* manje mesta za toolbar = veca knjiga */
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-bottom: 8px;
+  }
+  /* Na mobilnom smanjimo senke da knjiga deluje veca */
+  .stf__block {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  }
+  /* Na mobilnom nema smisla menjati mod (uvek je single) — sakrij dugme */
+  #btn-mode {
+    display: none;
+  }
+}
+
+/* Responsive — veoma mali mobilni (< 480px) */
+@media (max-width: 480px) {
+  .book-wrapper {
+    padding-top: 52px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
